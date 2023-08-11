@@ -8,6 +8,8 @@ function Footer(){
         <li className="pb-3 font-medium">FOLLOW US</li>
         <li><a className="hover:underline" href="https://github.com/LADDi008">Github</a></li>
         <li><a className="hover:underline" href="https://www.linkedin.com/in/gurjit-singh-27958924a/">LinkedIn</a></li>
+        <li><Link to="/admin">Admin</Link></li>
+       
             </div>
 
             <div className="col-span-6  list-none">
