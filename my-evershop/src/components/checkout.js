@@ -643,7 +643,7 @@ const handleAddressChange = () =>{
                   value={"Cash On Delivery"}
                   onChange={(e)=>setPaymentMethod(e.target.value)}
                 />
-                <img src="images/kids_files/cash.png" className=" w-32" />
+                <img src="https://res.cloudinary.com/dkkqzmr4l/image/upload/v1691764500/product_images/cash_pm0asr.png" className=" w-32" />
               </label>
               <hr className="border-t border-gray-200 my-3" />
               <label className="flex items-center gap-3">
@@ -655,7 +655,7 @@ const handleAddressChange = () =>{
                   value={"PayPal"}
                   onChange={(e)=>setPaymentMethod(e.target.value)}
                 />{" "}
-                <img src="images/kids_files/paypal.svg" className=" w-24" />{" "}
+                <img src="https://res.cloudinary.com/dkkqzmr4l/image/upload/v1691764622/product_images/paypal_et4lra.svg" className=" w-24" />{" "}
               </label>
             </div>
             {error.paymentMethod ? (
@@ -684,7 +684,7 @@ const handleAddressChange = () =>{
 
            <div className="text-gray-600 grid text-md my-5  gap-5">
            <div className="flex">
-             <img src="images/kids_files/done.svg" className=" w-14" />
+             <img src="https://res.cloudinary.com/dkkqzmr4l/image/upload/v1691764726/product_images/done_qydh8j.svg" className=" w-14" />
              <span>
                <h3>Order #12233</h3>
                <h1 className="text-2xl">Thank you {name}! </h1>
