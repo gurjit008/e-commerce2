@@ -28,17 +28,19 @@ const [colors,setColors]=useState([]);
 const [sizes,setSizes]=useState([]);
 
 const [sortingType,setSortingtype] = useState('');
+const [searchResult,setSearchResult]= useState([]);
 
 const state=useLocation().state;
-const {searchResult,query}=state;
 const navigate =useNavigate();
-if(!searchResult){
-    navigate("/");
+useEffect(()=>{
+  if(state.searchResult){
+    setSearchResult(state.searchResult)
+    }else{
+      navigate("/");
+      return;
+    }
 
-}else{
-    // setPrds(state)
-
-}
+},[state])
 
 
 console.log("state---",state);
@@ -68,6 +70,7 @@ const getProducts = async () => {
       const response = await axios.get(`https://e-commerce-backend-wpmd.onrender.com/products/AllProduct`);
         // setting page count base on all products
         setAllPrds(response.data);
+        setPagecount(()=>Math.ceil(prds.length / productPerpage));
 
     } catch (error) {
       console.log(error);
@@ -91,7 +94,6 @@ const getProducts = async () => {
 
 
 const filterProducts=()=>{
-    setPagecount(()=>Math.ceil(prds.length / productPerpage));
 
           // Filter by price range
           const filteredByPrice = prds.filter(
@@ -158,7 +160,11 @@ const filterProducts=()=>{
     filterProducts();
   }, [prds, range, brands,colors,sizes,arrow,sortingType]);
 
-
+  
+  useEffect(()=>{
+    setPagecount(()=>Math.ceil(filterPrds.length / productPerpage));
+  
+  },[filterPrds])
 
 
 // handling changing checkbox 

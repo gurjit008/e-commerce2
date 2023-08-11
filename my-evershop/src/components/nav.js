@@ -85,7 +85,7 @@ function Nav() {
               <Link to={"/Men"}> Men </Link>
             </li> */}
             <div className=" flex rounded bg-gray-100  focus-within:outline outline-1 items-center">
-              <svg
+            <a onClick={searchQuery} className=" h-10 flex items-center cursor-pointer">  <svg
                 class="w-7 h-4 flex-shrink-0  text-gray-800 "
                 aria-hidden="true"
                 xmlns="http://www.w3.org/2000/svg"
@@ -99,7 +99,7 @@ function Nav() {
                   stroke-width="2"
                   d="m19 19-4-4m0-7A7 7 0 1 1 1 8a7 7 0 0 1 14 0Z"
                 />
-              </svg>
+              </svg></a>
 
               <input
                 type="text"

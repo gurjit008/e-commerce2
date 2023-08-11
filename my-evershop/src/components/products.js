@@ -1,4 +1,4 @@
-import { Link, useParams } from "react-router-dom";
+import { Link, useNavigate, useParams } from "react-router-dom";
 import { useEffect, useState } from "react";
 import MultiRangeSlider from "./multiRangeSlider/MultiRangeSlider";
 import axios from "axios";
@@ -11,6 +11,14 @@ function Products(){
 
     //event listener for adjustment button for mobile user
 const { category} = useParams();
+const Category = ["Men","Women","Kids"];
+const navigate=useNavigate()
+useEffect(()=>{
+  if(!Category.includes(category)){
+    navigate("/");
+    return;
+  }
+},[category])
 
 const [prds, setPrds] = useState([]);
 const [filterPrds, setFilterPrds] = useState([]);
@@ -50,6 +58,8 @@ const getProducts = async () => {
       const response = await axios.get(`https://e-commerce-backend-wpmd.onrender.com/products/findCategory/${category}`);
         // setting page count base on all products
         setPrds(response.data);
+    setPagecount(()=>Math.ceil(prds.length / productPerpage));
+
 
     } catch (error) {
       console.log(error);
@@ -62,7 +72,6 @@ const getProducts = async () => {
 
 
 const filterProducts=()=>{
-    setPagecount(()=>Math.ceil(prds.length / productPerpage));
 
           // Filter by price range
           const filteredByPrice = prds.filter(
@@ -129,6 +138,10 @@ const filterProducts=()=>{
     filterProducts();
   }, [category,prds, range, brands,colors,sizes,arrow,sortingType]);
 
+  useEffect(()=>{
+    setPagecount(()=>Math.ceil(filterPrds.length / productPerpage));
+  
+  },[filterPrds])
 
 
 

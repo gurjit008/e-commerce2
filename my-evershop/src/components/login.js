@@ -95,6 +95,7 @@ const dispatch =useDispatch();
      async function protectedData(){
        try {
          const response = await api.get('/protectedData');
+         console.log("protected data",response.data);
          if(response.status == 200){
             setEmail(response.data.user.email)
             setUser(response.data.user.name)

@@ -1,8 +1,16 @@
 import { Link ,useLocation} from "react-router-dom"
 import { useParams } from "react-router-dom";
 function SearchHeader(){
+    const [query,setQuery]=useState();
     const state=useLocation().state;
-    const {searchResult,query}=state;
+    const navigate = useNavigate();
+    useEffect(()=>{
+        if(state){
+            setQuery(state.query);
+        }else{
+            navigate('/');
+        }
+    },[state])
 return(
     <>
     <header className="xl:container xl:mx-auto mx-6 mt-5 xl:px-16">
