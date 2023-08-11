@@ -13,7 +13,7 @@ const port = process.env.PORT || 8001;
 require("dotenv").config();
 
 app.use(cors({
-  origin: "http://localhost:3000",
+  origin: "https://myevershop.onrender.com",
   credentials: true,
 }));
 
