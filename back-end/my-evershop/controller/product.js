@@ -10,6 +10,8 @@ cloudinary.config({
   api_secret: "QGRB7701Jo_r1gvqBXvrvpu_QrU",
 });
 
+
+
 // const storage = multer.diskStorage({
 //     destination: function (req, file, cb) {
 //       cb(null, 'uploads'); // You need to create an 'uploads' folder in your project root

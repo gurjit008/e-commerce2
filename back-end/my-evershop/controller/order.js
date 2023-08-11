@@ -4,6 +4,8 @@ const Order = require("../model/order");
 const SaveOrder = async(req,res)=>{
     const orders = req.body;
 
+
+    
     try {
         const newOrder = new Order(orders);
         const savedOrder = await newOrder.save();
