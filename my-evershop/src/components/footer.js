@@ -9,7 +9,7 @@ function Footer(){
         <li className="pb-3 font-medium">FOLLOW US</li>
         <li><a className="hover:underline" href="https://github.com/LADDi008">Github</a></li>
         <li><a className="hover:underline" href="https://www.linkedin.com/in/gurjit-singh-27958924a/">LinkedIn</a></li>
-        <li><Link to="/admin">Admin</Link></li>
+        <li><Link to="/admin"><a className="hover:underline">Admin</a></Link></li>
        
             </div>
 
