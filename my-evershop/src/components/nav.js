@@ -32,7 +32,8 @@ function Nav() {
     }
   };
 
-  useEffect(() => navigate("/search", { state: {searchResult,query} }), [searchResult]);
+  useEffect(() => {if(query){navigate("/search", { state: {searchResult,query} })}}, [searchResult]);
+
 
   const handleQueryChange = async (e) => {
     setQuery(e.target.value);
