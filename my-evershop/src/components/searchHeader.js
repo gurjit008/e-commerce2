@@ -1,7 +1,8 @@
-import { Link ,useLocation} from "react-router-dom"
+import { useEffect, useState } from "react";
+import { Link ,useLocation, useNavigate} from "react-router-dom"
 import { useParams } from "react-router-dom";
 function SearchHeader(){
-    const [query,setQuery]=useState();
+    const [query,setQuery]=useState;
     const state=useLocation().state;
     const navigate = useNavigate();
     useEffect(()=>{
