@@ -40,7 +40,7 @@ function Nav() {
   const searchQuery = async (e) => {
     try {
       const response = await axios.get(
-        `http://localhost:8000/products/search?q=${query}`
+        `https://e-commerce-backend-wpmd.onrender.com/products/search?q=${query}`
       );
       console.log(response.data);
       setSearchResult(response.data);

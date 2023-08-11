@@ -95,7 +95,7 @@ const dispatch =useDispatch();
      async function protectedData(){
        try {
          const response = await api.get('/protectedData');
-         console.log("protected data",response.data);
+         console.log("protected data--",response.data);
          if(response.status == 200){
             setEmail(response.data.user.email)
             setUser(response.data.user.name)
@@ -125,7 +125,7 @@ try {
 if(userId){
   console.log("is user login ",userLogin);
   console.log("userId ",userId);
-  const response = await axios.post("http://localhost:8000/orders/getOrderDataByUserId",{userId})
+  const response = await axios.post("https://e-commerce-backend-wpmd.onrender.com/orders/getOrderDataByUserId",{userId})
   console.log(response.data);
     setOrderHistory(response.data) ;
 
