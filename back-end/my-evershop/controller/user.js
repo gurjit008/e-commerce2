@@ -37,7 +37,7 @@ const createUser = async (req,res)=>{
             const token=jwt.sign({_id:newUser._id,name:newUser.name,email:newUser.email},secretKey)
             res.cookie('token', token, {
                 httpOnly: true,
-                secure: false, // Set this to true if using HTTPS
+                secure: true, // Set this to true if using HTTPS
                 // other cookie options like expires, maxAge, etc.
               });
 
