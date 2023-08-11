@@ -1,0 +1,17 @@
+{
+  "name": "my-reactproject",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "install-server": " cd back-end && npm install",
+    "start-server": " cd back-end/my-evershop/index && node index.js",
+    "install-client": " cd my-evershop && npm install",
+    "build-client": " cd my-evershop && npm run build",
+    "start-client": " cd my-evershop && npm run start"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}
