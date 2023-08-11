@@ -188,7 +188,7 @@ const[uploading,SetUploading]=useState(false);
 SetUploading(true);
 
 // sending data to backend
-      const response = await axios.post('http://localhost:8000/products/newProduct', formData);
+      const response = await axios.post('https://e-commerce-backend-wpmd.onrender.com/products/newProduct', formData);
       console.log('Product Data uploaded:', response.data);
     
 

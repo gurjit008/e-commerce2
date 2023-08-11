@@ -107,7 +107,7 @@ if(cartItems.length == 0){
   // console.log("total", total);
 
   const api = axios.create({
-    baseURL: "http://localhost:8000/users", // Replace with your server URL
+    baseURL: "https://e-commerce-backend-wpmd.onrender.com/users", // Replace with your server URL
     withCredentials: true, // Allow Axios to send cookies with requests
   });
 
@@ -249,7 +249,7 @@ const handleAddressChange = () =>{
       }
       console.log(order);
       try {
-        const response =await axios.post("http://localhost:8000/orders/saveOrder",order)
+        const response =await axios.post("https://e-commerce-backend-wpmd.onrender.com/orders/saveOrder",order)
         console.log(response.data);
         
       } catch (error) {

@@ -26,7 +26,7 @@ function OrdersDetails() {
 
 
   const api = axios.create({
-    baseURL: "http://localhost:8000/orders",
+    baseURL: "https://e-commerce-backend-wpmd.onrender.com/orders",
     // withCredentials:true
   });
 

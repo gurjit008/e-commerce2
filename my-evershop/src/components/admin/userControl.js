@@ -15,7 +15,7 @@ function UserControl() {
 
 
   const api = axios.create({
-    baseURL: "http://localhost:8000/users",
+    baseURL: "https://e-commerce-backend-wpmd.onrender.com/users",
     // withCredentials:true
   });
 

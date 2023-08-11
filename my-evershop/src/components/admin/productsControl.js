@@ -23,7 +23,7 @@ function ProductsControl() {
 
 
   const api = axios.create({
-    baseURL: "http://localhost:8000/products",
+    baseURL: "https://e-commerce-backend-wpmd.onrender.com/products",
     // withCredentials:true
   });
 

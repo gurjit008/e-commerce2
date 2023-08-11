@@ -9,7 +9,7 @@ import axios from "axios";
 function Login() {
 
   const api = axios.create({
-    baseURL: 'http://localhost:8000/users', // Replace with your server URL
+    baseURL: 'https://e-commerce-backend-wpmd.onrender.com/users', // Replace with your server URL
     withCredentials: true, // Allow Axios to send cookies with requests
   });
 

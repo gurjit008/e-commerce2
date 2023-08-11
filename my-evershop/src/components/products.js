@@ -47,7 +47,7 @@ const handleCLick=()=>{
 
 const getProducts = async () => {
     try {
-      const response = await axios.get(`http://localhost:8000/products/findCategory/${category}`);
+      const response = await axios.get(`https://e-commerce-backend-wpmd.onrender.com/products/findCategory/${category}`);
         // setting page count base on all products
         setPrds(response.data);
 
