@@ -34,14 +34,13 @@ function Nav() {
 
   useEffect(() => {if(query){navigate("/search", { state: {searchResult,query} })}}, [searchResult]);
 
-
   const handleQueryChange = async (e) => {
     setQuery(e.target.value);
   };
   const searchQuery = async (e) => {
     try {
       const response = await axios.get(
-        `https://e-commerce-backend-wpmd.onrender.com/products/search?q=${query}`
+        `http://localhost:8000/products/search?q=${query}`
       );
       console.log(response.data);
       setSearchResult(response.data);
@@ -86,7 +85,8 @@ function Nav() {
               <Link to={"/Men"}> Men </Link>
             </li> */}
             <div className=" flex rounded bg-gray-100  focus-within:outline outline-1 items-center">
-            <a onClick={searchQuery} className=" h-10 flex items-center cursor-pointer">  <svg
+              
+              <a onClick={searchQuery} className=" h-10 flex items-center cursor-pointer">  <svg
                 class="w-7 h-4 flex-shrink-0  text-gray-800 "
                 aria-hidden="true"
                 xmlns="http://www.w3.org/2000/svg"
