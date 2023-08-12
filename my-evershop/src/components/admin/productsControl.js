@@ -39,7 +39,7 @@ function ProductsControl() {
       const response = await api.get("/AllProduct");
       console.log(response.data);
       const allProducts = response.data;
-      const allVariants = await allProducts.flatMap((product) =>
+      const allVariants = allProducts.flatMap((product) =>
         product.sizes.map((size) => ({
           id: product._id,
           _size_id: size._id,

@@ -45,7 +45,7 @@ function OrdersDetails() {
       
 
       if (response.status == 200) {
-        const allOrder = await allOrders.map((order) => ({
+        const allOrder = allOrders.map((order) => ({
             order_id:order._id,
             user_id: order.user_id,
             email:order.user_email,
