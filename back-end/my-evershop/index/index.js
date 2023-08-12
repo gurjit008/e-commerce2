@@ -13,7 +13,7 @@ const port = process.env.PORT || 8001;
 require("dotenv").config();
 
 app.use(cors({
-  origin: ["https://myevershop.onrender.com","https://e-commerce2-4lw1.vercel.app"],
+  origin: ["https://myevershop.onrender.com","https://myevershop.vercel.app"],
   credentials: true,
 }));
 

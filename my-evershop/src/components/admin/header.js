@@ -54,7 +54,7 @@ const handleClick=()=>{
             />
             </Link>
 
-            <p className="mt-2  text-base font-bold  ">NOWSHOPE</p>
+            <p className="mt-2  text-base font-bold  ">MYEVERSHOP</p>
           </div>
 
           <div className="logo col-span-5 gap-5 justify-center fle  ">
