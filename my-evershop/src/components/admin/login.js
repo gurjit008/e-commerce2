@@ -78,7 +78,7 @@ const navigate =useNavigate();
         <span className="flex justify-center py-7">
        <Link to={"/admin"}> <img
               class="object-contain  brightness-[1] grayscale  h-12"
-              src="/images/logo.png" alt=""
+              src="https://res.cloudinary.com/dkkqzmr4l/image/upload/v1691444780/product_images/logo_s7wdrl.png" alt=""
             /></Link>
         </span>
       {invalidId ?<span className="text-red-500 text-sm text-start mb-2">{invalidId} </span>:'' }  

@@ -111,11 +111,11 @@ const protectedData = (req,res)=>{
 };
 
 
-const logout = (req,res)=>{
-    res.clearCookie("token");
+const logout = async(req,res)=>{
+   await res.clearCookie("token").json({ message: "Logout successful" });
 
     // Return a success response
-    res.json({ message: "Logout successful" });
+    // res.json({ message: "Logout successful" });
     
 }
 
