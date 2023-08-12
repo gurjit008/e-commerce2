@@ -124,6 +124,7 @@ if(cartItems.length == 0){
     try { 
       const response = await api.get("/protectedData");
       if (response.status == 200) {
+        console.log("protected response-",response.data);
         setUserLogin(true);
         setEmailFromCookie(response.data.user.email);
         setName(response.data.user.name);
@@ -141,7 +142,7 @@ if(cartItems.length == 0){
       console.log(error.response.data);
     }
   }
-  useEffect(() => protectedData, []);
+  useEffect(() => {protectedData()}, []);
 
   useEffect(()=>console.log("userId-->",userId+"--useremail fookie-->",emailFromCookie,"useremail-->",email),[userId,email,emailFromCookie])
 
