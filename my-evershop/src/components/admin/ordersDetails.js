@@ -57,7 +57,7 @@ function OrdersDetails() {
       console.log(error);
     }
   };
-  useEffect(() => getOrders, []);
+  useEffect(() => {getOrders()}, []);
 
 
   const filteringOrders =()=>{

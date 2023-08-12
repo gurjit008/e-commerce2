@@ -62,7 +62,7 @@ function ProductsControl() {
       console.log(error);
     }
   };
-  useEffect(() => getProducts, []);
+  useEffect(() => {getProducts()}, []);
 
 
   const filteringProducts =()=>{

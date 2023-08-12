@@ -33,7 +33,7 @@ function UserControl() {
       console.log(error);
     }
   };
-  useEffect(() => getUsers, []);
+  useEffect(() => {getUsers()}, []);
 
 
 
