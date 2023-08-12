@@ -187,8 +187,13 @@ const[uploading,SetUploading]=useState(false);
 // alert("Data is being uploaded please wait");
 SetUploading(true);
 
+const api = axios.create({
+  baseURL: ['https://e-commerce-backend-wpmd.onrender.com', 'https://e-commerce2-backend.onrender.com']
+  // You can also configure other options here
+});
+
 // sending data to backend
-      const response = await axios.post('https://e-commerce-backend-wpmd.onrender.com/products/newProduct', formData);
+      const response = await api.post('/products/newProduct', formData);
       console.log('Product Data uploaded:', response.data);
     
 

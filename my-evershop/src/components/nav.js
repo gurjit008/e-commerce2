@@ -34,13 +34,18 @@ function Nav() {
 
   useEffect(() => {if(query){navigate("/search", { state: {searchResult,query} })}}, [searchResult]);
 
+  const api2 = axios.create({
+    baseURL: ['https://e-commerce-backend-wpmd.onrender.com', 'https://e-commerce2-backend.onrender.com']
+    // You can also configure other options here
+  });
+
   const handleQueryChange = async (e) => {
     setQuery(e.target.value);
   };
   const searchQuery = async (e) => {
     try {
-      const response = await axios.get(
-        `https://e-commerce-backend-wpmd.onrender.com/products/search?q=${query}`
+      const response = await api2.get(
+        `/products/search?q=${query}`
       );
       console.log(response.data);
       setSearchResult(response.data);

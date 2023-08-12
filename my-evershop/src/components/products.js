@@ -50,12 +50,16 @@ const handleCLick=()=>{
     console.log("shi");
 }
 
+const api = axios.create({
+  baseURL: ['https://e-commerce-backend-wpmd.onrender.com', 'https://e-commerce2-backend.onrender.com']
+  // You can also configure other options here
+});  
 
 
 
 const getProducts = async () => {
     try {
-      const response = await axios.get(`https://e-commerce-backend-wpmd.onrender.com/products/findCategory/${category}`);
+      const response = await api.get(`/products/findCategory/${category}`);
         // setting page count base on all products
         setPrds(response.data);
     setPagecount(()=>Math.ceil(prds.length / productPerpage));

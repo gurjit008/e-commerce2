@@ -25,9 +25,14 @@ function OrdersDetails() {
 
 
 
+  // const api = axios.create({
+  //   baseURL: "https://e-commerce-backend-wpmd.onrender.com/orders",
+  //   // withCredentials:true
+  // });
+
   const api = axios.create({
-    baseURL: "https://e-commerce-backend-wpmd.onrender.com/orders",
-    // withCredentials:true
+    baseURL: ['https://e-commerce-backend-wpmd.onrender.com/orders', 'https://e-commerce2-backend.onrender.com/orders']
+    // You can also configure other options here
   });
 
   const getOrders = async () => {

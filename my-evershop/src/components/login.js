@@ -8,9 +8,19 @@ import axios from "axios";
 
 function Login() {
 
+  // const api = axios.create({
+  //   baseURL: 'https://e-commerce-backend-wpmd.onrender.com/users', // Replace with your server URL
+  //   withCredentials: true, // Allow Axios to send cookies with requests
+  // });
+
   const api = axios.create({
-    baseURL: 'https://e-commerce-backend-wpmd.onrender.com/users', // Replace with your server URL
-    withCredentials: true, // Allow Axios to send cookies with requests
+    baseURL: ['https://e-commerce-backend-wpmd.onrender.com/users', 'https://e-commerce2-backend.onrender.com/users']
+    // You can also configure other options here
+  });
+
+  const api2 = axios.create({
+    baseURL: ['https://e-commerce-backend-wpmd.onrender.com', 'https://e-commerce2-backend.onrender.com']
+    // You can also configure other options here
   });
 
   const [email,setEmail]=useState('');
@@ -125,7 +135,7 @@ try {
 if(userId){
   console.log("is user login ",userLogin);
   console.log("userId ",userId);
-  const response = await axios.post("https://e-commerce-backend-wpmd.onrender.com/orders/getOrderDataByUserId",{userId})
+  const response = await api2.post("/orders/getOrderDataByUserId",{userId})
   console.log(response.data);
     setOrderHistory(response.data) ;
 

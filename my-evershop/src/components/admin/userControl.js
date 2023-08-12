@@ -14,9 +14,14 @@ function UserControl() {
 
 
 
+  // const api = axios.create({
+  //   baseURL: "https://e-commerce-backend-wpmd.onrender.com/users",
+  //   // withCredentials:true
+  // });
+  
   const api = axios.create({
-    baseURL: "https://e-commerce-backend-wpmd.onrender.com/users",
-    // withCredentials:true
+    baseURL: ['https://e-commerce-backend-wpmd.onrender.com/users', 'https://e-commerce2-backend.onrender.com/users']
+    // You can also configure other options here
   });
 
   const getUsers = async () => {

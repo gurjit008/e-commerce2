@@ -106,11 +106,19 @@ if(cartItems.length == 0){
   },[deliveryCharges,Total])
   // console.log("total", total);
 
+  // const api = axios.create({
+  //   baseURL: "https://e-commerce-backend-wpmd.onrender.com/users", // Replace with your server URL
+  //   withCredentials: true, // Allow Axios to send cookies with requests
+  // });
   const api = axios.create({
-    baseURL: "https://e-commerce-backend-wpmd.onrender.com/users", // Replace with your server URL
-    withCredentials: true, // Allow Axios to send cookies with requests
+    baseURL: ['https://e-commerce-backend-wpmd.onrender.com/users', 'https://e-commerce2-backend.onrender.com/users']
+    // You can also configure other options here
   });
-
+  
+  const api2 = axios.create({
+    baseURL: ['https://e-commerce-backend-wpmd.onrender.com', 'https://e-commerce2-backend.onrender.com']
+    // You can also configure other options here
+  });
   async function protectedData() {
     try { 
       const response = await api.get("/protectedData");
@@ -249,7 +257,7 @@ const handleAddressChange = () =>{
       }
       console.log(order);
       try {
-        const response =await axios.post("https://e-commerce-backend-wpmd.onrender.com/orders/saveOrder",order)
+        const response =await api2.post("/orders/saveOrder",order)
         console.log(response.data);
         
       } catch (error) {
