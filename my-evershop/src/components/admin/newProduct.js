@@ -3,7 +3,6 @@ import { MultiSelect } from "react-multi-select-component";
 import Foot from "./foot";
 import {ColorRing} from"react-loader-spinner"
 import axios from "axios";
-import { useLocation } from "react-router-dom";
 
 function NewProduct() {
 

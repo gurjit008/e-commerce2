@@ -47,7 +47,7 @@ const handleClick=()=>{
               <nav className="w-full fixed top-0 bg-white z-30 ">
         <div className="grid grid-cols-12 shadow-lg    items-center py-4 md:px-9 px-2 ">
           <div className="logo flex gap-1 items-center md:col-span-4 col-span-5  ">
-           <Link to="/user/home">
+           <Link to="/">
             <img
               class="object-contain filter brightness-0 grayscale  h-8"
               src={"https://res.cloudinary.com/dkkqzmr4l/image/upload/v1691444780/product_images/logo_s7wdrl.png"} alt="logo"

@@ -28,16 +28,18 @@ function ProductsControl() {
   // });
 
   const api = axios.create({
-    baseURL: ['https://e-commerce-backend-wpmd.onrender.com/products', 'https://e-commerce2-backend.onrender.com/products']
+    baseURL: 'https://e-commerce2-backend.onrender.com/products'
     // You can also configure other options here
   });
   
   const getProducts = async () => {
     try {
+      console.log("feching product data");
+
       const response = await api.get("/AllProduct");
       console.log(response.data);
       const allProducts = response.data;
-      const allVariants = allProducts.flatMap((product) =>
+      const allVariants = await allProducts.flatMap((product) =>
         product.sizes.map((size) => ({
           id: product._id,
           _size_id: size._id,
@@ -67,7 +69,8 @@ function ProductsControl() {
       console.log(error);
     }
   };
-  useEffect(() => getProducts, []);
+  useEffect(getProducts, []);
+  // useEffect(() => getProducts, []);
 
 
   const filteringProducts =()=>{

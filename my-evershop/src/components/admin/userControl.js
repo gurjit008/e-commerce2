@@ -26,8 +26,10 @@ function UserControl() {
 
   const getUsers = async () => {
     try {
+      console.log("feching users data");
       const response = await api.get("/allUser");
-      console.log(response.data);
+      console.log("users data",response.data);
+      console.log("feched users data");
       setUsers(response.data);
     
       if (response.status == 200) {
@@ -38,7 +40,8 @@ function UserControl() {
       console.log(error);
     }
   };
-  useEffect(() => getUsers, []);
+  // useEffect(() => getUsers, []);
+  useEffect( getUsers, []);
 
 
 

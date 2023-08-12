@@ -37,13 +37,15 @@ function OrdersDetails() {
 
   const getOrders = async () => {
     try {
+      console.log("feching orders data");
       const response = await api.get("/getOrderData");
+      
       console.log(response.data);
       const allOrders = response.data;
       
 
       if (response.status == 200) {
-        const allOrder = allOrders.map((order) => ({
+        const allOrder = await allOrders.map((order) => ({
             order_id:order._id,
             user_id: order.user_id,
             email:order.user_email,
@@ -62,7 +64,8 @@ function OrdersDetails() {
       console.log(error);
     }
   };
-  useEffect(() => getOrders, []);
+  // useEffect(() => getOrders, []);
+  useEffect(getOrders, []);
 
 
   const filteringOrders =()=>{
