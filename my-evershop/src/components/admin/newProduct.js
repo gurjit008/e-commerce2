@@ -188,7 +188,7 @@ const[uploading,SetUploading]=useState(false);
 SetUploading(true);
 
 const api = axios.create({
-  baseURL: ['https://e-commerce-backend-wpmd.onrender.com', 'https://e-commerce2-backend.onrender.com']
+  baseURL: 'https://e-commerce2-backend.onrender.com'
   // You can also configure other options here
 });
 

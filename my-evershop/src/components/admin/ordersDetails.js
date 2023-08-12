@@ -31,7 +31,7 @@ function OrdersDetails() {
   // });
 
   const api = axios.create({
-    baseURL: ['https://e-commerce-backend-wpmd.onrender.com/orders', 'https://e-commerce2-backend.onrender.com/orders']
+    baseURL: 'https://e-commerce2-backend.onrender.com/orders'
     // You can also configure other options here
   });
 

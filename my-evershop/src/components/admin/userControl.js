@@ -20,7 +20,7 @@ function UserControl() {
   // });
   
   const api = axios.create({
-    baseURL: ['https://e-commerce-backend-wpmd.onrender.com/users', 'https://e-commerce2-backend.onrender.com/users']
+    baseURL: 'https://e-commerce2-backend.onrender.com/users'
     // You can also configure other options here
   });
 
