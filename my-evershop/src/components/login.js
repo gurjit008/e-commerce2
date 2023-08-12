@@ -128,7 +128,7 @@ const dispatch =useDispatch();
      }
     // protectedData();
     
-    useEffect(()=>{protectedData()},[userLogin])
+    useEffect(()=>{protectedData()},[])
 
   const getUserOrderHistory = async ()=>{
 try {
