@@ -3,6 +3,7 @@ import { MultiSelect } from "react-multi-select-component";
 import Foot from "./foot";
 import {ColorRing} from"react-loader-spinner"
 import axios from "axios";
+import { useLocation } from "react-router-dom";
 
 function NewProduct() {
 
@@ -186,13 +187,8 @@ const[uploading,SetUploading]=useState(false);
 // alert("Data is being uploaded please wait");
 SetUploading(true);
 
-const api = axios.create({
-  baseURL: 'https://e-commerce2-backend.onrender.com'
-  // You can also configure other options here
-});
-
 // sending data to backend
-      const response = await api.post('/products/newProduct', formData);
+      const response = await axios.post('https://e-commerce2-backend.onrender.com/products/newProduct', formData);
       console.log('Product Data uploaded:', response.data);
     
 

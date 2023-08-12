@@ -14,22 +14,15 @@ function UserControl() {
 
 
 
-  // const api = axios.create({
-  //   baseURL: "https://e-commerce-backend-wpmd.onrender.com/users",
-  //   // withCredentials:true
-  // });
-  
   const api = axios.create({
-    baseURL: 'https://e-commerce2-backend.onrender.com/users'
-    // You can also configure other options here
+    baseURL: "https://e-commerce2-backend.onrender.com/users",
+    // withCredentials:true
   });
 
   const getUsers = async () => {
     try {
-      console.log("feching users data");
       const response = await api.get("/allUser");
-      console.log("users data",response.data);
-      console.log("feched users data");
+      console.log(response.data);
       setUsers(response.data);
     
       if (response.status == 200) {
@@ -40,8 +33,7 @@ function UserControl() {
       console.log(error);
     }
   };
-  // useEffect(() => getUsers, []);
-  useEffect( getUsers, []);
+  useEffect(() => getUsers, []);
 
 
 

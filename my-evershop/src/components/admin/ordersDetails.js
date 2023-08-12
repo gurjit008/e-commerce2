@@ -25,21 +25,14 @@ function OrdersDetails() {
 
 
 
-  // const api = axios.create({
-  //   baseURL: "https://e-commerce-backend-wpmd.onrender.com/orders",
-  //   // withCredentials:true
-  // });
-
   const api = axios.create({
-    baseURL: 'https://e-commerce2-backend.onrender.com/orders'
-    // You can also configure other options here
+    baseURL: "https://e-commerce2-backend.onrender.com/orders",
+    // withCredentials:true
   });
 
   const getOrders = async () => {
     try {
-      console.log("feching orders data");
       const response = await api.get("/getOrderData");
-      
       console.log(response.data);
       const allOrders = response.data;
       
@@ -64,8 +57,7 @@ function OrdersDetails() {
       console.log(error);
     }
   };
-  // useEffect(() => getOrders, []);
-  useEffect(getOrders, []);
+  useEffect(() => getOrders, []);
 
 
   const filteringOrders =()=>{

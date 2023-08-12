@@ -22,20 +22,13 @@ function ProductsControl() {
 
 
 
-  // const api = axios.create({
-  //   baseURL: "https://e-commerce-backend-wpmd.onrender.com/products",
-  //   // withCredentials:true
-  // });
-
   const api = axios.create({
-    baseURL: 'https://e-commerce2-backend.onrender.com/products'
-    // You can also configure other options here
+    baseURL: "https://e-commerce2-backend.onrender.com/products",
+    // withCredentials:true
   });
-  
+
   const getProducts = async () => {
     try {
-      console.log("feching product data");
-
       const response = await api.get("/AllProduct");
       console.log(response.data);
       const allProducts = response.data;
@@ -69,8 +62,7 @@ function ProductsControl() {
       console.log(error);
     }
   };
-  useEffect(getProducts, []);
-  // useEffect(() => getProducts, []);
+  useEffect(() => getProducts, []);
 
 
   const filteringProducts =()=>{
