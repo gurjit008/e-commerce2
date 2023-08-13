@@ -352,7 +352,7 @@ console.log("page count",pageCount);
             {filterPrds.slice(productOnPage.start,productOnPage.end).map(product=>(
                 <div className="lg:col-span-3 md:col-span-4 col-span-6   ">
                 <Link to="/SingleProduct" state={{product:product,variant:allPrds.filter((p)=>p.name === product.name )}}  >
-                <img src={product.images[0]} className="object-contain bg-gray-100 "/>
+                <img src={product.images[0]} loading="lazy" className="object-contain bg-gray-100 "/>
                 </Link>
                
                 <h2>{product.name}</h2>
