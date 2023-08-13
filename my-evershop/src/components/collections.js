@@ -5,7 +5,7 @@ function Collections(){
         <>
         <div className="collections  text-gray-700 lg:px-20 px-6 p-5 gap-4 grid grid-cols-4 md:grid-cols-12"> 
 <div className="col-span-4 ">
-    <img className="object-contain mb-3 border " src="https://res.cloudinary.com/dkkqzmr4l/image/upload/v1691478633/product_images/kids_t7pefj.jpg"/>
+    <img className="object-contain mb-3 border " loading="lazy"  src="https://res.cloudinary.com/dkkqzmr4l/image/upload/v1691478633/product_images/kids_t7pefj.jpg"/>
     <div className="img-dis ">
 <h1 className="text-2xl pb-3">Kids SHOES COLLECTION</h1>
 <h5 className="text-sm pb-3">Constructed from luxury nylons, leathers, and custom hardware, featuring sport details such as hidden breathing vents, waterproof + antimicrobial linings, and more.</h5>
@@ -14,7 +14,7 @@ function Collections(){
 </div>
 
 <div className="col-span-4 ">
-    <img className="object-contain mb-3 border " src="https://res.cloudinary.com/dkkqzmr4l/image/upload/v1691478676/product_images/women_euxr1w.jpg"/>
+    <img className="object-contain mb-3 border " loading="lazy" src="https://res.cloudinary.com/dkkqzmr4l/image/upload/v1691478676/product_images/women_euxr1w.jpg"/>
     <div className="img-dis ">
 <h1 className="text-2xl pb-3">WOMEN SHOES COLLECTION</h1>
 <h5 className="text-sm pb-3">Constructed from luxury nylons, leathers, and custom hardware, featuring sport details such as hidden breathing vents, waterproof + antimicrobial linings, and more.</h5>
@@ -23,7 +23,7 @@ function Collections(){
 </div>
 
 <div className="col-span-4  ">
-    <img className="object-contain mb-3 border " src="https://res.cloudinary.com/dkkqzmr4l/image/upload/v1691478677/product_images/men3_kn1dvr.webp"/>
+    <img className="object-contain mb-3 border " loading="lazy" src="https://res.cloudinary.com/dkkqzmr4l/image/upload/v1691478677/product_images/men3_kn1dvr.webp"/>
     <div className="img-dis ">
 <h1 className="text-2xl pb-3">MEN SHOES COLLECTION</h1>
 <h5 className="text-sm pb-3">Constructed from luxury nylons, leathers, and custom hardware, featuring sport details such as hidden breathing vents, waterproof + antimicrobial linings, and more.</h5>

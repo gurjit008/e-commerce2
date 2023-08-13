@@ -9,7 +9,7 @@ function FeatureProduct(props){
         {featureProduct.map((product)=>(
             <>
             <div className="col-span-3"> 
-    <img className="object-contain mb-3 border bg-gray-300 " src={product.image}/>
+    <img className="object-contain mb-3 border bg-gray-300 " loading="lazy" src={product.image}/>
             <h1 className="font-bold">{product.title}</h1>
             <h1>{product.price}</h1>
             
