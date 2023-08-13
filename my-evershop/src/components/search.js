@@ -108,7 +108,7 @@ const getProducts = async () => {
 
   if(searchResult){
     setPrds(searchResult);
-    setPagecount(()=>Math.ceil(prds.length / productPerpage));
+    setPagecount(()=>Math.ceil(searchResult.length / productPerpage));
 
 
   }}
@@ -187,7 +187,7 @@ const filterProducts=()=>{
     setPagecount(()=>Math.ceil(filterPrds.length / productPerpage));
   
   },[filterPrds])
-
+ 
 
 
 // handling changing checkbox 
