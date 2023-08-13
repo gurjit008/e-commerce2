@@ -63,7 +63,9 @@ console.log("state---",searchResult);
 // product pre page
 const productPerpage = 12;
 const [productOnPage,setProductOnPage] =useState({start:0,end:productPerpage});
-const [pageCount,setPagecount]=useState(0)
+const [pageCount,setPagecount]=useState(0);
+const [selectedIndex,setSelectedIndex]=useState(0);
+
 console.log("product per page",productOnPage);
 
 
@@ -371,7 +373,7 @@ console.log("page count",pageCount);
 <div className="text-sm flex justify-center font-semibold gap-2 py-9"> 
             
     {Array.from({length:pageCount},(_,index)=>(
-            <div onClick={()=>(setProductOnPage({start:index === 0 ? 0 : index * productPerpage, end:index === 0 ? productPerpage : productPerpage * (index+1) }) ,console.log("product on page",productOnPage,"index is ",index))} className="border border-gray-400 hover:cursor-pointer text-gray-500 rounded-full p-3 relative items-center justify-center flex"> <span className="absolute" >{index+1}</span></div>
+            <div onClick={()=>(setProductOnPage({start:index === 0 ? 0 : index * productPerpage, end:index === 0 ? productPerpage : productPerpage * (index+1) }),setSelectedIndex(index) ,console.log("product on page",productOnPage,"index is ",index))} className={`border border-gray-400 ${selectedIndex == index ? "bg-gray-200":'' }  cursor-pointer text-gray-500 rounded-full p-3 relative items-center justify-center flex`}> <span className="absolute" >{index+1}</span></div>
     ))}
         
             
