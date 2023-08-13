@@ -105,7 +105,9 @@ const getProducts = async () => {
   useEffect(()=>{
 
   if(searchResult){
-    setPrds(searchResult)
+    setPrds(searchResult);
+    setPagecount(()=>Math.ceil(prds.length / productPerpage));
+
 
   }}
 
