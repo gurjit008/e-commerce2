@@ -318,7 +318,7 @@ console.log("page count",pageCount);
 
                       <div className="lg:col-span-3 animate-pulse md:col-span-4 grid gap-3 col-span-6   ">
                                      
-                                     <div  className="object-contain bg-slate-400 h-40 w-[188px] "></div>
+                                     <div  className="object-contain bg-slate-400 h-40 max-w-[188px] "></div>
                                      
                                     
                                      <h2 className="bg-slate-400  rounded h-2.5 w-20"></h2>
