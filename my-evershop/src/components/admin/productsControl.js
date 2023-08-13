@@ -442,6 +442,7 @@ console.log("productFilterByStatus",productFilterByStatus);
 
                     <li>
                       <img
+                      loading="lazy"
                         src={prd.image}
                         className="border rounded object-contain p-1 pt-2.5 h-[56px] w-[56px] "
                       />
