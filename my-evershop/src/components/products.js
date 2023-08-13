@@ -37,8 +37,9 @@ const [sortingType,setSortingtype] = useState('');
 // product pre page
 const productPerpage = 12;
 const [productOnPage,setProductOnPage] =useState({start:0,end:productPerpage});
-const [pageCount,setPagecount]=useState(0)
+const [pageCount,setPagecount]=useState(0);
 const [selectedIndex,setSelectedIndex]=useState(0);
+const [loading,setLoading]=useState(true);
 console.log("product per page",productOnPage);
 
 
@@ -63,6 +64,7 @@ const getProducts = async () => {
       const response = await api.get(`/products/findCategory/${category}`);
         // setting page count base on all products
         setPrds(response.data);
+        setLoading(false);
     setPagecount(()=>Math.ceil(prds.length / productPerpage));
 
 
@@ -311,19 +313,37 @@ console.log("page count",pageCount);
 
 
         <div className="grid grid-cols-12  gap-4">
+          {loading ? 
+                    Array.from({length:12} ,()=>(
 
-            {filterPrds.slice(productOnPage.start,productOnPage.end).map(product=>(
-                <div className="lg:col-span-3 md:col-span-4 col-span-6   ">
-                <Link to="/SingleProduct" state={{product:product,variant:prds.filter((p)=>p.name === product.name )}}  >
-                <img src={product.images[0]} loading="lazy" className="object-contain bg-gray-100 "/>
-                </Link>
-               
-                <h2>{product.name}</h2>
-                <h2>${product.price}</h2>
-                {/* <h3>Product varient {JSON.stringify(productWithVariant[0])}</h3> */}
-                </div>
+                      <div className="lg:col-span-3 animate-pulse md:col-span-4 grid gap-3 col-span-6   ">
+                                     
+                                     <div  className="object-contain bg-slate-400 h-40 w-[188px] "></div>
+                                     
+                                    
+                                     <h2 className="bg-slate-400  rounded h-2.5 w-20"></h2>
+                                     <h2 className="bg-slate-400 rounded h-2.5 w-5"></h2>
+                                     {/* <h3>Product varient {JSON.stringify(productWithVariant[0])}</h3> */}
+                                     </div>
+                      
+                                  ))
+                      
+                                  :  
+                                  filterPrds.slice(productOnPage.start,productOnPage.end).map(product=>(
+                                    <div className="lg:col-span-3 md:col-span-4 col-span-6   ">
+                                    <Link to="/SingleProduct" state={{product:product,variant:prds.filter((p)=>p.name === product.name )}}  >
+                                    <img src={product.images[0]} loading="lazy" className="object-contain bg-gray-100 "/>
+                                    </Link>
+                                   
+                                    <h2>{product.name}</h2>
+                                    <h2>${product.price}</h2>
+                                    {/* <h3>Product varient {JSON.stringify(productWithVariant[0])}</h3> */}
+                                    </div>
+                    
+                                ))
+        }
 
-            ))}
+ 
 
         
 </div> 
