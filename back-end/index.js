@@ -3,6 +3,7 @@ const app = express();
 const mongoose = require('mongoose');
 const cors = require('cors');
 const cookieParser = require('cookie-parser');
+const { allProducts } = require('./my-evershop/controller/product');
 // const userRoutes = require('./routes/userRoutes'); // Import userRoutes
 // const productRoutes = require('./routes/productRoutes'); // Import productRoutes
 // const userRoutes =require('./my-evershop/routes/users') 
@@ -31,6 +32,8 @@ async function main() {
 app.get('/',(req,res)=>{
   res.json('backend connected')
 })
+app.get('/AllProduct', allProducts);
+
 
 // Use userRoutes as middleware for "/users" base path
 // app.use('/users', userRoutes);
