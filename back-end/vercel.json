@@ -6,11 +6,22 @@
         "use" : "@vercel/node"
       }
     ],
-    "routes":[
-      {
-        "src": "/(.*)",
-        "dest": "/index.js"
-     
-      }
-    ]
+    "routes": [
+        {
+          "src": "/users/(.*)",
+          "dest": "/users/userRoutes.js"
+        },
+        {
+          "src": "/products/(.*)",
+          "dest": "/products/productRoutes.js"
+        },
+        {
+          "src": "/orders/(.*)",
+          "dest": "/orders/orderRoutes.js"
+        },
+        {
+          "src": "/(.*)",
+          "dest": "/index.js"
+        }
+      ]
   }
