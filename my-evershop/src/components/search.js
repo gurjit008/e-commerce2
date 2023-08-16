@@ -181,7 +181,7 @@ const filterProducts=()=>{
 
   useEffect(() => {
     filterProducts();
-  }, [prds, range, brands,colors,sizes,arrow,sortingType]);
+  }, [prds, range, brands,colors,sizes,arrow,sortingType,searchResult]);
 
   useEffect(()=>{
     setPagecount(()=>Math.ceil(filterPrds.length / productPerpage));
