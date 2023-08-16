@@ -2,7 +2,7 @@
     "version":2,
     "builds":[
       {
-        "src":"./index/index.js",
+        "src":"./my-evershop/index/index.js",
         "use" : "@vercel/node"
       }
     ],
