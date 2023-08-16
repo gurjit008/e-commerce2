@@ -27,6 +27,11 @@ async function main() {
   console.log("Database Connected");
 }
 
+//for testing
+app.get('/',(req,res)=>{
+  res.json('backend connected')
+})
+
 // Use userRoutes as middleware for "/users" base path
 app.use('/users', userRoutes);
 
