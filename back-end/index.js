@@ -32,7 +32,7 @@ async function main() {
 app.get('/',(req,res)=>{
   res.json('backend connected')
 })
-app.get('/AllProduct', allProducts);
+app.get('/A', allProducts);
 
 
 // Use userRoutes as middleware for "/users" base path
