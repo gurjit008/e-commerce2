@@ -5,9 +5,9 @@ const cors = require('cors');
 const cookieParser = require('cookie-parser');
 // const userRoutes = require('./routes/userRoutes'); // Import userRoutes
 // const productRoutes = require('./routes/productRoutes'); // Import productRoutes
-const userRoutes =require('./routes/users') 
-const productRoutes =require('./routes/products') 
-const orderRoutes =require('./routes/orders') 
+const userRoutes =require('./my-evershop/routes/users') 
+const productRoutes =require('./my-evershop/routes/products') 
+const orderRoutes =require('./my-evershop/routes/orders') 
 // const port = 8000;
 const port = process.env.PORT || 8001;
 require("dotenv").config();
