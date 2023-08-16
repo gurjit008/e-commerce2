@@ -5,9 +5,9 @@ const cors = require('cors');
 const cookieParser = require('cookie-parser');
 // const userRoutes = require('./routes/userRoutes'); // Import userRoutes
 // const productRoutes = require('./routes/productRoutes'); // Import productRoutes
-const userRoutes =require('./my-evershop/routes/users') 
-const productRoutes =require('./my-evershop/routes/products') 
-const orderRoutes =require('./my-evershop/routes/orders') 
+// const userRoutes =require('./my-evershop/routes/users') 
+// const productRoutes =require('./my-evershop/routes/products') 
+// const orderRoutes =require('./my-evershop/routes/orders') 
 // const port = 8000;
 const port = process.env.PORT || 8001;
 require("dotenv").config();
@@ -33,12 +33,12 @@ app.get('/',(req,res)=>{
 })
 
 // Use userRoutes as middleware for "/users" base path
-app.use('/users', userRoutes);
+// app.use('/users', userRoutes);
 
-// Use productRoutes as middleware for "/products" base path
-app.use('/products', productRoutes);
+// // Use productRoutes as middleware for "/products" base path
+// app.use('/products', productRoutes);
 
-app.use('/orders', orderRoutes);
+// app.use('/orders', orderRoutes);
 
 app.listen(port, () => {
   console.log(`Server started at ${port}`);
