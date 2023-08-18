@@ -259,7 +259,7 @@ const searchQuery = async(req,res)=>{
         { brand: { $regex: `\\b${token}\\b`, $options: "i" } },
         { color: { $regex:`\\b${token}\\b`, $options: "i" } },
         { type: { $regex: token , $options: "i" } },
-        {enable: true }
+        // {enable: true }
       
       ],
     }));
