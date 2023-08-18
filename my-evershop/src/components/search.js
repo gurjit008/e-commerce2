@@ -186,7 +186,7 @@ const filterProducts=()=>{
   useEffect(()=>{
     setPagecount(()=>{Math.ceil(filterPrds.length / productPerpage)});
   
-  },[filterPrds,searchResult])
+  },[filterPrds])
  
 useEffect(()=>{
   console.log("filterPrds length is ",filterPrds.length);
