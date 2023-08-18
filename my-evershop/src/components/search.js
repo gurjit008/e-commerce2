@@ -90,7 +90,7 @@ const getProducts = async () => {
       const response = await api.get(`/products/AllProduct`);
         // setting page count base on all products
         setAllPrds(response.data);
-    setPagecount(()=>Math.ceil(prds.length / productPerpage));
+    // setPagecount(()=>Math.ceil(prds.length / productPerpage));
 
 
     } catch (error) {
@@ -104,16 +104,16 @@ const getProducts = async () => {
 
   console.log(!searchResult);
 
-  useEffect(()=>{
+//   useEffect(()=>{
 
-  if(searchResult){
-    // setPrds(searchResult);
-    setPagecount(()=>{Math.ceil(searchResult.length / productPerpage)});
+//   if(searchResult){
+//     // setPrds(searchResult);
+//     setPagecount(()=>{Math.ceil(searchResult.length / productPerpage)});
 
 
-  }}
+//   }}
 
-,[searchResult])
+// ,[searchResult,filterPrds])
 
 
 const filterProducts=()=>{
@@ -186,9 +186,12 @@ const filterProducts=()=>{
   useEffect(()=>{
     setPagecount(()=>{Math.ceil(filterPrds.length / productPerpage)});
   
-  },[filterPrds])
+  },[filterPrds,searchResult])
  
-
+useEffect(()=>{
+  console.log("filterPrds length is ",filterPrds.length);
+  console.log("page count is ",pageCount);
+},[pageCount,filterPrds])
 
 // handling changing checkbox 
 const handleChackboxChange = (event,type)=>{
