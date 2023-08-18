@@ -63,7 +63,7 @@ const[uploading,SetUploading]=useState(false);
     console.log("category is :" + category);
   };
 
-  useEffect(handleSizeChange, [selected]);
+  useEffect(()=>{handleSizeChange()}, [selected]);
 
   function handleSizeChange() {
     setSizes(selected.map((e) => e.value));

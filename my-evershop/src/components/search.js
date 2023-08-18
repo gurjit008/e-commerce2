@@ -107,8 +107,8 @@ const getProducts = async () => {
   useEffect(()=>{
 
   if(searchResult){
-    setPrds(searchResult);
-    setPagecount(()=>Math.ceil(searchResult.length / productPerpage));
+    // setPrds(searchResult);
+    setPagecount(()=>{Math.ceil(searchResult.length / productPerpage)});
 
 
   }}
@@ -119,7 +119,7 @@ const getProducts = async () => {
 const filterProducts=()=>{
 
           // Filter by price range
-          const filteredByPrice = prds.filter(
+          const filteredByPrice = searchResult.filter(
             (prd) => +prd.price >= range.min && +prd.price <= range.max
           );
       
@@ -181,10 +181,10 @@ const filterProducts=()=>{
 
   useEffect(() => {
     filterProducts();
-  }, [prds, range, brands,colors,sizes,arrow,sortingType,searchResult]);
+  }, [range, brands,colors,sizes,arrow,sortingType,searchResult]);
 
   useEffect(()=>{
-    setPagecount(()=>Math.ceil(filterPrds.length / productPerpage));
+    setPagecount(()=>{Math.ceil(filterPrds.length / productPerpage)});
   
   },[filterPrds])
  
