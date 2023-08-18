@@ -267,7 +267,7 @@ const searchQuery = async(req,res)=>{
     const query = { $and: orConditions };
     
 
-const results = await product.find(query);//.limit(10);
+const results = await product.find(query,{enable:true});//.limit(10);
     
 
     res.json(results);
